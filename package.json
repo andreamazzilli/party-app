@@ -2,7 +2,7 @@
   "name": "party-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://andreamazzilli.github.io/party-app/docs",
+  "homepage": "https://andreamazzilli.github.io/party-app",
   "dependencies": {
     "howler": "^2.1.1",
     "immutable": "^4.0.0-rc.12",
