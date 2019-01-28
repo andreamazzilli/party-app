@@ -1,0 +1,15 @@
+.mouse {
+  position: absolute;
+  background-color: white;
+  opacity: 0.8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 10000;
+  transform: translate( -10px, -10px ) scale( 1, 1 );
+  transition: all 0.05s linear;//cubic-bezier(0.19, 1, 0.22, 1);
+  &--click {
+    transform: translate( -10px, -10px ) scale( 5, 5 );
+    opacity: 0;
+  }
+}
