@@ -5,11 +5,12 @@ import * as audio from '../../helpers/play'
 const GAMES_PRELOAD_RESOURCES = ( action$, store ) => action$.pipe(
   ofType( 'GAMES_PRELOAD_RESOURCES' ),
   tap( action => {
+    const host = window.location.href.replace('/index.html','')
     return store.value.games.toJS().map( el => {
       return el.songs.map( song => {
-        audio.preloadSong( song.url, () => { action.payload.dispatch( {
+        audio.preloadSong( host + song.url, () => { action.payload.dispatch( {
           type: 'PLAY_SONG_PRELOAD_COMPLETE',
-          payload: song.url
+          payload: host + song.url
         }) } )
         return song.url
       })
