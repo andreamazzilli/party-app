@@ -15,7 +15,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Provider store={ store }>
-    <Router>
+    <Router basename={ window.location.pathname }>
       <Fragment>
         <Navigation />
         <Route exact path="/" component={ Root } />
