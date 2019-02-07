@@ -8,9 +8,10 @@ const GAMES_PRELOAD_RESOURCES = ( action$, store ) => action$.pipe(
     const host = window.location.href.replace('/index.html','')
     return store.value.games.toJS().map( el => {
       return el.songs.map( song => {
-        audio.preloadSong( host + song.url, () => { action.payload.dispatch( {
+        console.log( song.url )
+        audio.preloadSong( song.url, () => { action.payload.dispatch( {
           type: 'PLAY_SONG_PRELOAD_COMPLETE',
-          payload: host + song.url
+          payload: song.url
         }) } )
         return song.url
       })

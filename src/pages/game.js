@@ -12,7 +12,7 @@ class Game extends Component {
     const game = this.props.match.params.game
     let color
     let songs = []
-    this.props.games.toJS().forEach( el => {
+    this.props.games.forEach( el => {
       if ( el.id === game ) {
         color = el.color
         songs = el.songs
@@ -51,7 +51,7 @@ class Game extends Component {
 const mapState = state => {
   return {
     app: state.app,
-    games: state.games,
+    games: state.games.toJS(),
     preloadedSongs: state.play.get( 'preloadedSongs' ).toJS()
   }
 }
